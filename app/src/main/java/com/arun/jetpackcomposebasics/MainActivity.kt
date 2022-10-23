@@ -38,7 +38,7 @@ fun Greeting(name: String) {
     Surface(color = MaterialTheme.colors.primary) {
         Column(modifier = Modifier.padding(24.dp)) {
             Text(text = "Hello,")
-            Text(text = "$name!")
+            Text(text = name)
         }
     }
 }
