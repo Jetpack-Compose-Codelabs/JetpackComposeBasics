@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetpackComposeBasicsTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.primary) {
+                Surface(color = MaterialTheme.colors.background) {
                     Greeting("Greeting")
                 }
             }
@@ -28,7 +28,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    Surface(color = MaterialTheme.colors.primary) {
+        Text(text = "Hello $name!")
+    }
 }
 
 @Preview(showBackground = true)
