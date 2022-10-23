@@ -20,12 +20,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetpackComposeBasicsTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Greeting")
-                }
+                MyApp()
             }
         }
+    }
+}
+
+@Composable
+private fun MyApp() {
+    Surface(color = MaterialTheme.colors.background) {
+        Greeting("Android")
     }
 }
 
@@ -40,7 +44,7 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     JetpackComposeBasicsTheme {
-        Greeting("Android")
+        MyApp()
     }
 }
 
