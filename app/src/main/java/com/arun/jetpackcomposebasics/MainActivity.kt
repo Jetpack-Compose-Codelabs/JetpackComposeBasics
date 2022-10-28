@@ -45,19 +45,24 @@ private fun MyApp(
 fun Greeting(name: String) {
     val expanded = remember { mutableStateOf(false)}
 
+    val extraPadding = if (expanded.value) 48.dp else 0.dp
+
     Surface(
         color = MaterialTheme.colors.primary,
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
         Row(modifier = Modifier.padding(24.dp)) {
-            Column(modifier = Modifier.padding(24.dp)) {
+            Column(modifier = Modifier
+                .padding(extraPadding)
+                .weight(1f)
+            ) {
                 Text(text = "Hello,")
                 Text(text = name)
             }
             Button(
                 onClick = { expanded.value = !expanded.value}
             ) {
-                Text(if (expanded.value) "Show more" else "Show less")
+                Text(if (expanded.value) "Show less" else "Show more")
             }
 
         }
