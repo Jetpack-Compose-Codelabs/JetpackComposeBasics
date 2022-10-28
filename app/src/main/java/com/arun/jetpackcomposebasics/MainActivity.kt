@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.arun.jetpackcomposebasics.ui.theme.JetpackComposeBasicsTheme
+import androidx.compose.material.Button
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,10 +45,19 @@ fun Greeting(name: String) {
         color = MaterialTheme.colors.primary,
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
-        Column(modifier = Modifier.padding(24.dp)) {
-            Text(text = "Hello,")
-            Text(text = name)
+        Row(modifier = Modifier.padding(24.dp)) {
+            Column(modifier = Modifier.padding(24.dp)) {
+                Text(text = "Hello,")
+                Text(text = name)
+            }
+            Button(
+                onClick = { /* TODO */}
+            ) {
+                Text("Show more")
+            }
+
         }
+
     }
 }
 
