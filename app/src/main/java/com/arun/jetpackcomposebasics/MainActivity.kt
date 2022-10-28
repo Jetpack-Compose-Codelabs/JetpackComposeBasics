@@ -15,6 +15,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.arun.jetpackcomposebasics.ui.theme.JetpackComposeBasicsTheme
 import androidx.compose.material.Button
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +43,8 @@ private fun MyApp(
 
 @Composable
 fun Greeting(name: String) {
+    val expanded = remember { mutableStateOf(false)}
+
     Surface(
         color = MaterialTheme.colors.primary,
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
@@ -51,9 +55,9 @@ fun Greeting(name: String) {
                 Text(text = name)
             }
             Button(
-                onClick = { /* TODO */}
+                onClick = { expanded.value = !expanded.value}
             ) {
-                Text("Show more")
+                Text(if (expanded.value) "Show more" else "Show less")
             }
 
         }
