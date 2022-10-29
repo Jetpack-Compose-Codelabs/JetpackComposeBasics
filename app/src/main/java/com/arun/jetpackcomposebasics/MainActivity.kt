@@ -54,7 +54,7 @@ fun Greeting(name: String) {
                 .padding(bottom = extraPadding)
             ) {
                 Text(text = "Hello,")
-                Text(text = name)
+                Text(text = name, style = MaterialTheme.typography.h3)
             }
             Button(
                 onClick = { expanded = !expanded}
