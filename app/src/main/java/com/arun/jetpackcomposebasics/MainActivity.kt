@@ -141,7 +141,7 @@ private fun GreetingPreview() {
 @Composable
 fun MyAppPreview() {
     JetpackComposeBasicsTheme {
-        MyApp(Modifier.fillMaxSize())
+        MyApp(modifier = Modifier.fillMaxSize())
     }
 }
 
