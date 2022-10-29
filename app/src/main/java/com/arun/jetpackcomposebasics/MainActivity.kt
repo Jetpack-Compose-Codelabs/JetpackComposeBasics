@@ -21,6 +21,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.text.font.FontWeight
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +55,9 @@ fun Greeting(name: String) {
                 .padding(bottom = extraPadding)
             ) {
                 Text(text = "Hello,")
-                Text(text = name, style = MaterialTheme.typography.h3)
+                Text(text = name, style = MaterialTheme.typography.h3.copy(
+                    fontWeight = FontWeight.ExtraBold
+                ))
             }
             Button(
                 onClick = { expanded = !expanded}
