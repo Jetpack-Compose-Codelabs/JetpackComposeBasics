@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.arun.jetpackcomposebasics.ui.theme.JetpackComposeBasicsTheme
 import androidx.compose.material.Button
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.focus.focusModifier
 
@@ -97,7 +98,7 @@ fun OnboardingPreview() {
 
 @Composable
 fun MyApp(modifier: Modifier = Modifier) {
-    var shouldShowOnboarding by remember { mutableStateOf(true)}
+    var shouldShowOnboarding by rememberSaveable { mutableStateOf(true)}
 
     Surface(modifier) {
         if (shouldShowOnboarding) {
